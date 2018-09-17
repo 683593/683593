@@ -1,1 +1,1 @@
-# 683593
+This project is only for learning MEAN STACK.
