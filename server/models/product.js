@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+const deepPopulate = require('mongoose-deep-populate')(mongoose);
+
 const ProductSchema = new Schema({
   title: {
     type: String
@@ -22,6 +24,8 @@ const ProductSchema = new Schema({
   created: Date,
   updated: Date
 });
+
+ProductSchema.plugin(deepPopulate);
 
 ProductSchema.pre("save", function (next) {
   var product = this;

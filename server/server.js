@@ -5,9 +5,11 @@ const mongoose = require("mongoose");
 //include config
 const config = require("./config");
 const cors = require('cors');
+
 //connect Mongo database.
 mongoose.connect(config.database, {
-  useNewUrlParser: true
+  useNewUrlParser: true,
+  autoReconnect: true
 }, err => {
   if (err) {
     console.log(err);
